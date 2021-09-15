@@ -32,16 +32,16 @@ describe('SortedList', () => {
     test('should add a second value to SortedList, sorted', () => {
         sl.add(20);
         sl.add(10);
-        expect(sl.get(1)).toEqual(10);
-        expect(sl.get(2)).toEqual(20);
+        expect(sl.get(0)).toEqual(10);
+        expect(sl.get(1)).toEqual(20);
       });
     test('should add a third value to SortedList, sorted', ()=> {
          sl.add(30);
          sl.add(20);
          sl.add(10);
-         expect(sl.get(1)).toEqual(10);
-         expect(sl.get(2)).toEqual(20);
-         expect(sl.get(3)).toEqual(30);
+         expect(sl.get(0)).toEqual(10);
+         expect(sl.get(1)).toEqual(20);
+         expect(sl.get(2)).toEqual(30);
        });
       });
   describe('#get(i)',  ()=> {
@@ -57,7 +57,7 @@ describe('SortedList', () => {
          let item = 10;
          for(let i=1; i<200; i++) {
            sl.add(item*i);
-           expect(sl.get(i)).toBe(item*i);
+           expect(sl.get(i)).toBe(sl[i]);
          }
        });
       });
