@@ -18,25 +18,25 @@ constructor(){
      return this.items[pos];
     }
     max() {
-    
+
      if (this.items.length == 0){
       this.myErr("EmptyList Error");
      }
      this.items.sort((a,b) => a - b);
-     return this.items[this.length-1]         
+     return this.items[this.length-1]
     }
     min() {
       if (this.items.length == 0){
         this.myErr("EmptyList Error");
        }
       this.items.sort((a,b) => a - b);
-      return this.items[0]; 
+      return this.items[0];
     }
     average() {
       if(this.items.length == 0){
         this.myErr("EmptyList Error");
       }
-      return this.items.reduce((a,b) => a + b, 0) / this.length;
+      return this.sum() / this.length;
     }
     sum() {
       if(this.items.length == 0){
@@ -44,11 +44,9 @@ constructor(){
       }
       return this.items.reduce((a,b) => a + b, 0);
     }
-    
-    myErr = (str) => {
-      let err = new Error(str);
-      throw err;
-    }
+
+    myErr = (str) => {throw new Error(str);}
+
 
 }
 
@@ -64,4 +62,3 @@ export default SortedList;
 
 // remove node
 // https://stackoverflow.com/questions/20711240/how-to-completely-remove-node-js-from-windows
-
